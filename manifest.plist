@@ -11,7 +11,7 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-			<string>https://www.goex.me/dist/goex_ios/iosGOEX.ipa</string>
+					<string>http://www.goex.me/dist/goex_ios/iosGOEX.ipa</string>
 				</dict>
 				<dict>
 					<key>kind</key>
@@ -19,7 +19,7 @@
 					<key>needs-shine</key>
 					<true/>
 					<key>url</key>
-			<string>https://www.goex.me/dist/goex_ios/logo_57px.png</string>
+					<string>http://www.goex.me/dist/goex_ios/logo_57px.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>
@@ -27,7 +27,7 @@
 				<key>bundle-identifier</key>
 				<string>com.goex.GOEX</string>
 				<key>bundle-version</key>
-				<string>1.0.0</string>
+				<string>1.0.2</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>subtitle</key>
