@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html  >
+<head>
+        <link rel="stylesheet" type="text/css" href="../../app/dist/css/lever.css">
+    <style> 
+    .wapper_header{
+        position: relative;
+    min-height: 900px;
+    padding: 0 0 300px;
+    zoom: 1;
+    } 
+    body{
+        height: 100%;
+    min-width: 1480px ;
+    }
+    .header_icon{
+        padding: 6% 140px 3% 140px
+    }
+    .content p{
+        font-size: 52px
+    }
+    .mo_img p{
+        font-size: 52px;
+        color:rgba(101,101,101,1);
+        font-family:PingFang-SC-Medium;
+    }
+    .content .gox{
+        color:#282828;
+        font-family:PingFang-SC-Medium;
+    }
+    .content .font{
+        margin-top: 30px;
+        color:rgba(101,101,101,1);
+        font-family:PingFang-SC-Medium;
+    }
+    .content .version{
+        margin-top: 10px;
+        color:rgba(101,101,101,1);
+        font-family:PingFang-SC-Medium;
+        margin-bottom: 20px;
+    }
+    html, body{
+       
+    }
+    .content_btn{
+        margin-top: 4%;
+        margin-bottom: 4%;
+    }
+    .layout_doc{
+        position: relative;
+    min-height: 100%;
+    }
+    .content_btn .btn{
+        background-color: #24AA8C;
+        font-size: 51px;
+        width: 660px;
+        border-radius:7px;
+        height: 123px;
+    }
+    .font_color{
+        color:rgba(255,255,255,1);
+    }
+    .ck_body{
+    min-width: 1010px;
+    background: url({+resources+}/dist/images/move_bround.png);
+    background-size: cover;
+    color: rgba(40,40,40,1);
+    }
+    .mo_img{
+        padding: 40px;
+    }
+    .wapper_cn{
+        width: 100px;
+        float: right;
+        font-size: 51px;
+        color:rgba(101,101,101,1);
+        font-family:PingFang-SC-Medium;
+        margin-top: 40px;
+        margin-right: 40px
+    }
+</style>
+    {(tpl/common/include.html)}
+    <title>{{param[lang..'_title']}}</title>
+        </style>
+    <div class="ck_body" > 
+        <div class="layout_doc">
+            <div class="wapper_header">
+                <div class="wapper_cn" id="wapper_lang"></div>
+                <div class="header_icon">
+                    <img width="370" src="{+resources+}/dist/images/logo_icon.png">
+                </div>
+                 <div class="content">
+                    <p class="gox">GOEX</p>    
+                    <p class="font" id="font"></p>   
+                    <p class="version">V1.0.2</p>  
+                </div>
+                <div class="mo_img">
+                        <img width="680" src="{+resources+}/dist/images/newmove.png"> 
+                        <p><span id="size"></span>:7.9M</p>
+                        <p><span id="updatTime"></span>：2018.10.11</p>
+                    </div>
+                <div class="content_btn">
+                    <button class="btn" onclick="user()">
+                            <img width="80" src="{+resources+}/dist/images/btn.svg"> 
+                            <span class="font_color" id="immediately"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>     
+        <script type="text/javascript" src="{+resources+}/dist/js/jquery/jquery-1.11.3.min.js" charset="UTF-8"></script>
+        <script src="{+resources+}/dist/js/language/{{lang}}.js"></script>
+        <script >
+            var cnlang={
+                Digital :"数字货币交易所",
+                size:"大小",
+                updatTime:"最近更新时间",
+                immediately:"立即下载",
+                rateDescription:"费率说明",
+            }
+            var enlang={
+                Digital :"Digital money exchange",
+                 size:"size",
+                updatTime:"Latest update time",
+                immediately:"Download ",
+            }
+            document.title="GOEX客户端下载";
+            var stateLang='cn';
+            $("#font").text(cnlang.Digital);
+            $("#wapper_lang").text('CN');
+            $("#size").text(cnlang.size);
+            $("#updatTime").text(cnlang.updatTime);
+            $("#immediately").text(cnlang.immediately);
+            $(".wapper_cn").click(function(){
+                if(stateLang=='cn'){
+                $("#font").text(enlang.Digital);
+            $("#size").text(enlang.size);
+            $("#updatTime").text(enlang.updatTime);
+            $("#immediately").text(enlang.immediately);      
+            stateLang='en' ;
+            $("#wapper_lang").text('EN');         
+        }else{
+            $("#font").text(cnlang.Digital);
+            $("#size").text(cnlang.size);
+            $("#updatTime").text(cnlang.updatTime);
+            $("#immediately").text(cnlang.immediately);  
+            stateLang='cn'  ;
+            $("#wapper_lang").text('CN');  
+        }
+            })
+            function user() {
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+    var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    if (isAndroid) {
+       //这个是安卓操作系统
+        window.location.href='http://47.254.216.126:9999/app/app_goex.apk'
+    }
+    if (isIOS) {
+　　　　//这个是ios操作系统
+window.location.href='itms-services://?action=download-manifest&url=https://www.goex.me/dist/goex_ios/manifest.plist'
+    }
+};
+        </script>
+    </body>
+</html>
